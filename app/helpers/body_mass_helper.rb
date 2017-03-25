@@ -1,0 +1,2 @@
+module BodyMassHelper
+end
