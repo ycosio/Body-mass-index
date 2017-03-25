@@ -2,12 +2,20 @@
 
 <h3> Bienvenido <%= current_user.email %> </h3>
 
-<% if @body_mass %>
-  <p> Category: <%= @body_mass.category  %>  </p>
-  <p> Mass: <%= @body_mass.mass%>  </p>
-  <p> Height: <%= @body_mass.height%>  </p>
-<% else %>
-  <p> Category: Unknow</p>
-  <p> Mass: 0 </p>
-  <p> Height: 0 </p>
+<p> Category: <%= @body_mass.category  %>  </p>
+
+<%= form_for @body_mass do |f| %>
+  <p>
+    <%= f.label :mass %>(Kg) :
+    <%= f.text_field :mass %>
+  </p>
+
+  <p>
+    <%= f.label :height %>(m) :
+    <%= f.text_field :height %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>
