@@ -1,2 +1,13 @@
-<h1>BodyMass#index</h1>
-<p>Find me in app/views/body_mass/index.html.erb</p>
+<h1>BodyMass</h1>
+
+<h3> Bienvenido <%= current_user.email %> </h3>
+
+<% if @body_mass %>
+  <p> Category: <%= @body_mass.category  %>  </p>
+  <p> Mass: <%= @body_mass.mass%>  </p>
+  <p> Height: <%= @body_mass.height%>  </p>
+<% else %>
+  <p> Category: Unknow</p>
+  <p> Mass: 0 </p>
+  <p> Height: 0 </p>
+<% end %>

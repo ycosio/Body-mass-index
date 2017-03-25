@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(version: 20170325184754) do
 
   create_table "body_masses", force: :cascade do |t|
+    t.integer  "user_id"
     t.integer  "mass"
     t.integer  "height"
-    t.integer  "category"
+    t.string   "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
