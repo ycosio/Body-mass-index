@@ -4,11 +4,6 @@ before_action :authenticate_user!
 before_action :get_body_mass
 
   def index
-    @body_mass = BodyMass.find_by(user_id: current_user.id)
-    if !@body_mass
-      @body_mass = BodyMass.new(new_params)
-      @body_mass.save
-    end
   end
 
   def show
@@ -16,7 +11,6 @@ before_action :get_body_mass
   end
 
   def update
-    @body_mass = BodyMass.find(params[:id])
     @body_mass.update(body_mass_params)
     render 'index'
   end
@@ -25,7 +19,9 @@ before_action :get_body_mass
 
     def body_mass_params
      body_params = params.require(:body_mass).permit(:user_id, :mass, :height)
-     body_params.merge!(@body_mass.body_imc(@body_mass.mass,@body_mass.height))
+     @mass = body_params[:mass].to_f
+     @height = body_params[:height].to_f
+     body_params.merge!(@body_mass.body_imc(@mass,@height))
     end
 
     def new_params
@@ -38,6 +34,10 @@ before_action :get_body_mass
 
     def get_body_mass
       @body_mass = BodyMass.find_by(user_id: current_user.id)
+      if !@body_mass
+        @body_mass = BodyMass.new(new_params)
+        @body_mass.save
+      end
     end
 
 end
