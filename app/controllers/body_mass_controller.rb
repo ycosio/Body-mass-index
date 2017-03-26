@@ -22,6 +22,7 @@ before_action :get_body_mass
      @mass = body_params[:mass].to_f
      @height = body_params[:height].to_f
      body_params.merge!(@body_mass.body_imc(@mass,@height))
+     body_params.merge!(@body_mass.body_category)
     end
 
     def new_params

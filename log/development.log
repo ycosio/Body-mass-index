@@ -4462,3 +4462,489 @@ Processing by BodyMassController#update as HTML
 Completed 200 OK in 122ms (Views: 79.2ms | ActiveRecord: 14.4ms)
 
 
+Started GET "/body_mass/3" for 127.0.0.1 at 2017-03-25 18:18:16 -0600
+Processing by BodyMassController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000index
+Completed 302 Found in 116ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/body_mass/3" for 127.0.0.1 at 2017-03-25 18:19:40 -0600
+Processing by BodyMassController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000index
+Completed 302 Found in 75ms (ActiveRecord: 7.8ms)
+
+
+Started PATCH "/body_mass/3" for 127.0.0.1 at 2017-03-25 18:19:44 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jkOxhu8wcS+xB3JNhKB9C1afKST79U4C/w+KRcW3Df5Q/5UMCAg+RoOZldT9GwZQN5k4pguxkPerH05RYfuVDg==", "body_mass"=>{"mass"=>"65.0", "height"=>"1.54444"}, "commit"=>"Update Body mass", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.6ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `to_h' for "Overweight":String):
+  
+app/controllers/body_mass_controller.rb:25:in `body_mass_params'
+app/controllers/body_mass_controller.rb:14:in `update'
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.2ms)
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.9ms)
+Started PATCH "/body_mass/3" for 127.0.0.1 at 2017-03-25 18:21:08 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jkOxhu8wcS+xB3JNhKB9C1afKST79U4C/w+KRcW3Df5Q/5UMCAg+RoOZldT9GwZQN5k4pguxkPerH05RYfuVDg==", "body_mass"=>{"mass"=>"65.0", "height"=>"1.54444"}, "commit"=>"Update Body mass", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (6.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (9.3ms)[0m  [1m[33mUPDATE "body_masses" SET "category" = ?, "updated_at" = ? WHERE "body_masses"."id" = ?[0m  [["category", "Overweight"], ["updated_at", 2017-03-26 00:21:08 UTC], ["id", 3]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 223ms (Views: 84.8ms | ActiveRecord: 25.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-03-25 18:21:16 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"f9+NxBRJSPmQULxlUv15dA30dxrEX6DbcseyTsKZFwOhY6lO83EHkKLOW/wrRgIvbPJmmDQbfi4m13ZaZtWP8w=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-25 18:21:17 -0600
+Processing by BodyMassController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-03-25 18:21:17 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/shared/_links.html.erb (10.9ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/sessions/new.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 101ms (Views: 99.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-03-25 18:21:27 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D/yrcWKGJ5xNyJHMxAUchmJFY804L6Dif39gQV0Q4VEvcZEZ1ZAkYj+HFQWoJ4rV7gt8M5DJISpdge34NrD16w==", "user"=>{"email"=>"ycosio@ucol.mx", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ycosio@ucol.mx"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-03-26 00:21:28 UTC], ["sign_in_count", 2], ["updated_at", 2017-03-26 00:21:28 UTC], ["id", 2]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 511ms (ActiveRecord: 12.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-25 18:21:28 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.8ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 84ms (Views: 80.3ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/body_mass/2" for 127.0.0.1 at 2017-03-25 18:21:32 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6awChN4aZjrD7OsX26TYFAHsYOYi6AvaiKimwYKn2oRruk1UP7g/ha5rRE3U00IvPJqgE6gLNdergYZIk9Swaw==", "body_mass"=>{"mass"=>"50.5", "height"=>"1.8"}, "commit"=>"Update Body mass", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (11.4ms)[0m  [1m[33mUPDATE "body_masses" SET "imc" = ?, "category" = ?, "updated_at" = ? WHERE "body_masses"."id" = ?[0m  [["imc", 15.59], ["category", "Severely underweight"], ["updated_at", 2017-03-26 00:21:32 UTC], ["id", 2]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 110ms (Views: 77.5ms | ActiveRecord: 21.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-03-25 18:21:40 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jdvCwd8NhKLMFpKVt7zZWW75RV9GFOa2YSRmbvz3z+IPzY0RPq/dHaGRPc+4y0NiU4+Fqsz32LtCDUbn7YSlDQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-25 18:21:40 -0600
+Processing by BodyMassController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-03-25 18:21:40 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/shared/_links.html.erb (4.1ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/sessions/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 74ms (Views: 72.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-03-25 18:21:48 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"68YX4BvdTN0yLe7/Yd5/2Xm5nk61SzZHii/QdPW4ZmbswlDhYwj0tUIQ8RonPanSecsvBHiT8unsKo57CWzcFA==", "user"=>{"email"=>"ycosio1310@gamil.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ycosio1310@gamil.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-03-26 00:21:48 UTC], ["sign_in_count", 2], ["updated_at", 2017-03-26 00:21:48 UTC], ["id", 1]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 455ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-25 18:21:48 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 81ms (Views: 70.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-25 18:21:51 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U2mpWn6OKTa3n9AxDflNvaulFC3iQKSjtipCI9I7bBJ1svW5nGq5KpdSbLjWkY64sP90kSoHDiCmPcdSz3L9Vg==", "body_mass"=>{"mass"=>"65.0", "height"=>"1.65"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (10.2ms)[0m  [1m[33mUPDATE "body_masses" SET "category" = ?, "updated_at" = ? WHERE "body_masses"."id" = ?[0m  [["category", "Normal (healthy weight)"], ["updated_at", 2017-03-26 00:21:51 UTC], ["id", 1]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 106ms (Views: 70.3ms | ActiveRecord: 16.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-03-25 18:21:55 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RBYm6vTeq5ew9a1mZLKo8nkeUZGXiV2AndxLZixBuCFizXoJFjo7i5A4Ee+/2mv3YkQxLV/O9wONy84XMQgpZQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-25 18:21:55 -0600
+Processing by BodyMassController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-03-25 18:21:55 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/sessions/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 84ms (Views: 82.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-03-25 18:22:07 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/registrations/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 98ms (Views: 96.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-25 18:22:18 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6N84Gc79n1GR5RoDlawZL3TP87DWGP5mNPv5LJV+VhONyNXo3S3OGlunJVxqh1XIJbTd/XbzbEkZXb1WnCoScw==", "user"=>{"email"=>"ycosio@ucol.mxsdfsdfs", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ycosio@ucol.mxsdfsdfs"], ["LIMIT", 1]]
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "ycosio@ucol.mxsdfsdfs"], ["encrypted_password", "$2a$11$iZxh34gyinFjIKndsMXfmeZCZN9I7c8DXK9x9STR8OK9.tuNceloe"], ["created_at", 2017-03-26 00:22:18 UTC], ["updated_at", 2017-03-26 00:22:18 UTC]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (20.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-03-26 00:22:18 UTC], ["last_sign_in_at", 2017-03-26 00:22:18 UTC], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", 2017-03-26 00:22:18 UTC], ["id", 4]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 547ms (ActiveRecord: 42.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-25 18:22:18 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "body_masses" ("user_id", "mass", "height", "category", "created_at", "updated_at", "imc") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 4], ["mass", 0.0], ["height", 0.0], ["category", "Unknow"], ["created_at", 2017-03-26 00:22:18 UTC], ["updated_at", 2017-03-26 00:22:18 UTC], ["imc", 0.0]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 89ms (Views: 68.4ms | ActiveRecord: 8.9ms)
+
+
+Started PATCH "/body_mass/4" for 127.0.0.1 at 2017-03-25 18:22:39 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HaWoeR0H0rwFoOC/rNP3j+Pt50VnAz7vbGO+mH7laHnsBOaEmWc1GT4bL8T4fg6giu4z9anCob7DB5vTGrhW8A==", "body_mass"=>{"mass"=>"100.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (27.3ms)[0m  [1m[33mUPDATE "body_masses" SET "mass" = ?, "height" = ?, "imc" = ?, "category" = ?, "updated_at" = ? WHERE "body_masses"."id" = ?[0m  [["mass", 100.0], ["height", 1.45], ["imc", 47.56], ["category", "Obese Class III (Very severely obese)"], ["updated_at", 2017-03-26 00:22:39 UTC], ["id", 4]]
+  [1m[35m (113.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 222ms (Views: 61.0ms | ActiveRecord: 140.7ms)
+
+
+Started PATCH "/body_mass/4" for 127.0.0.1 at 2017-03-25 18:27:21 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZsAdDP4YxLd/DgAqr/tZS2UJrXSFpwvOVMhHSWajXGuXYVPxengjEkS1z1H7VqBkDAp5xEtmlJ/7rGICAv5i4g==", "body_mass"=>{"mass"=>"100.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 3.9ms)
+
+
+  
+SyntaxError (/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:7: formal argument cannot be an instance variable
+  def body_@imc(mass,height)
+               ^
+/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:7: syntax error, unexpected '(', expecting ';' or '\n'
+  def body_@imc(mass,height)
+                ^
+/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:7: syntax error, unexpected ')', expecting '='
+/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:9: syntax error, unexpected ':', expecting =>
+    @@imc = {@imc: @@imc.round(2)}
+                  ^
+/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:9: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/body_mass.rb:7: formal argument cannot be an instance variable
+app/models/body_mass.rb:7: syntax error, unexpected '(', expecting ';' or '\n'
+app/models/body_mass.rb:7: syntax error, unexpected ')', expecting '='
+app/models/body_mass.rb:9: syntax error, unexpected ':', expecting =>
+app/models/body_mass.rb:9: syntax error, unexpected '}', expecting keyword_end
+app/controllers/body_mass_controller.rb:37:in `get_body_mass'
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.5ms)
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.1ms)
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.6ms)
+Started PATCH "/body_mass/4" for 127.0.0.1 at 2017-03-25 18:27:50 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZsAdDP4YxLd/DgAqr/tZS2UJrXSFpwvOVMhHSWajXGuXYVPxengjEkS1z1H7VqBkDAp5xEtmlJ/7rGICAv5i4g==", "body_mass"=>{"mass"=>"100.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 5.8ms)
+
+
+  
+SyntaxError (/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:9: syntax error, unexpected ':', expecting =>
+    @@imc = {@imc: @@imc.round(2)}
+                  ^
+/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:9: syntax error, unexpected '}', expecting keyword_end
+/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/models/body_mass.rb:9: syntax error, unexpected ':', expecting =>
+app/models/body_mass.rb:9: syntax error, unexpected '}', expecting keyword_end
+app/models/body_mass.rb:33: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/body_mass_controller.rb:37:in `get_body_mass'
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.1ms)
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.1ms)
+Started PATCH "/body_mass/4" for 127.0.0.1 at 2017-03-25 18:28:23 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZsAdDP4YxLd/DgAqr/tZS2UJrXSFpwvOVMhHSWajXGuXYVPxengjEkS1z1H7VqBkDAp5xEtmlJ/7rGICAv5i4g==", "body_mass"=>{"mass"=>"100.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"4"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 5.7ms)
+
+
+  
+SyntaxError (/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:9: syntax error, unexpected ':', expecting =>
+    @imc = {@imc: @imc.round(2)}
+                 ^
+/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:9: syntax error, unexpected '}', expecting keyword_end
+/home/yair/Documentos/Body-mass-index/app/models/body_mass.rb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/models/body_mass.rb:9: syntax error, unexpected ':', expecting =>
+app/models/body_mass.rb:9: syntax error, unexpected '}', expecting keyword_end
+app/models/body_mass.rb:33: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/body_mass_controller.rb:37:in `get_body_mass'
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (25.2ms)
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.8ms)
+Started PATCH "/body_mass/4" for 127.0.0.1 at 2017-03-25 18:28:55 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZsAdDP4YxLd/DgAqr/tZS2UJrXSFpwvOVMhHSWajXGuXYVPxengjEkS1z1H7VqBkDAp5xEtmlJ/7rGICAv5i4g==", "body_mass"=>{"mass"=>"100.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 10.9ms)
+
+
+  
+NoMethodError (undefined method `<' for {:imc=>47.56}:Hash):
+  
+app/models/body_mass.rb:13:in `body_category'
+app/controllers/body_mass_controller.rb:25:in `body_mass_params'
+app/controllers/body_mass_controller.rb:14:in `update'
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (49.8ms)
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.3ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (120.1ms)
+Started PATCH "/body_mass/4" for 127.0.0.1 at 2017-03-25 18:29:55 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZsAdDP4YxLd/DgAqr/tZS2UJrXSFpwvOVMhHSWajXGuXYVPxengjEkS1z1H7VqBkDAp5xEtmlJ/7rGICAv5i4g==", "body_mass"=>{"mass"=>"100.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 171ms (Views: 71.4ms | ActiveRecord: 17.4ms)
+
+
+Started PATCH "/body_mass/4" for 127.0.0.1 at 2017-03-25 18:30:02 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YHJJu48Ygz/s6hThqB4gFZzYU0tMs3ZViI5GSvEkDeKR0wdGC3hkmtdR25r8s9k69duH+4Jy6QQn6mMBlXkzaw==", "body_mass"=>{"mass"=>"100.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 103ms (Views: 78.9ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/body_mass/4" for 127.0.0.1 at 2017-03-25 18:30:09 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AsReSpfvn2vZ3F0DCHeL5XAa08rmppv6UMxMP1S9FNbzZRC3E494zuJnknhc2nLKGRkHeihnBKv/qGl0MOAqXw==", "body_mass"=>{"mass"=>"45.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE "body_masses" SET "mass" = ?, "imc" = ?, "category" = ?, "updated_at" = ? WHERE "body_masses"."id" = ?[0m  [["mass", 45.0], ["imc", 21.4], ["category", "Normal (healthy weight)"], ["updated_at", 2017-03-26 00:30:09 UTC], ["id", 4]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 116ms (Views: 71.8ms | ActiveRecord: 13.3ms)
+
+
+Started PATCH "/body_mass/4" for 127.0.0.1 at 2017-03-25 18:30:20 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fGXhf/9o++kRp+yyErjiFfs/OaInCfNo05ua+Ugi2WeNxK+CewgcTCocI8lGFRs6kjztEunIbDl8/7+yLH/n7g==", "body_mass"=>{"mass"=>"100.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (8.8ms)[0m  [1m[33mUPDATE "body_masses" SET "mass" = ?, "imc" = ?, "category" = ?, "updated_at" = ? WHERE "body_masses"."id" = ?[0m  [["mass", 100.0], ["imc", 47.56], ["category", "Obese Class III (Very severely obese)"], ["updated_at", 2017-03-26 00:30:20 UTC], ["id", 4]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 111ms (Views: 63.4ms | ActiveRecord: 17.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-03-25 18:30:22 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/kG1Gs6neJHPoNYzj8XlXoNZwiSekTIZrFWWXRw/0XAP4PvnSsefNPQbGUjbaBxx6loWlFBQrUgDMbMWeGLv+Q=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-25 18:30:22 -0600
+Processing by BodyMassController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-03-25 18:30:22 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/sessions/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 79ms (Views: 73.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-03-25 18:30:33 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/shared/_links.html.erb (6.0ms)
+  Rendered /home/yair/.rvm/gems/ruby-2.2.2/gems/devise-4.2.1/app/views/devise/registrations/new.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 125ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-03-25 18:30:42 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FicKDn3TpHmKWMovq1C2XOoyakhsctOSHyDSeKslkH5u9jLKg7XOnYoBGWf4d/ilqgl/jlTW5fnLPkQsSxZcxQ==", "user"=>{"email"=>"re-c3@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "re-c3@hotmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (4.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "re-c3@hotmail.com"], ["encrypted_password", "$2a$11$u7VAgcYRa4zmCj3x57V6XOi5xhR32Mo59r.4eDwbFnvMuk.9N3fqa"], ["created_at", 2017-03-26 00:30:43 UTC], ["updated_at", 2017-03-26 00:30:43 UTC]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-03-26 00:30:43 UTC], ["last_sign_in_at", 2017-03-26 00:30:43 UTC], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", 2017-03-26 00:30:43 UTC], ["id", 5]]
+  [1m[35m (17.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 582ms (ActiveRecord: 29.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-25 18:30:43 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "body_masses" ("user_id", "mass", "height", "category", "created_at", "updated_at", "imc") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 5], ["mass", 0.0], ["height", 0.0], ["category", "Unknow"], ["created_at", 2017-03-26 00:30:43 UTC], ["updated_at", 2017-03-26 00:30:43 UTC], ["imc", 0.0]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 98ms (Views: 72.3ms | ActiveRecord: 9.5ms)
+
+
+Started PATCH "/body_mass/5" for 127.0.0.1 at 2017-03-25 18:30:55 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"alLZhjcQGjuHCpK0knpQiUsvYB4PuB9ZDIkcJUPcVGLgmT9sc812oh3rrvVer6Qmojr5ITjt0XYQJGvbtCJunw==", "body_mass"=>{"mass"=>"70.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (4.9ms)[0m  [1m[33mUPDATE "body_masses" SET "mass" = ?, "height" = ?, "imc" = ?, "category" = ?, "updated_at" = ? WHERE "body_masses"."id" = ?[0m  [["mass", 70.0], ["height", 1.45], ["imc", 33.29], ["category", "Obese Class I (Moderately obese)"], ["updated_at", 2017-03-26 00:30:55 UTC], ["id", 5]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 107ms (Views: 80.4ms | ActiveRecord: 14.2ms)
+
+
+Started PATCH "/body_mass/5" for 127.0.0.1 at 2017-03-25 18:31:13 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+imyJXm1flBJwOZ31KumImmt9c8ASL8RyS0m7HNSkTtw4lTPPWgSydMh2jYYflKNgLhs8DcdcT7VgFEShKyrxg==", "body_mass"=>{"mass"=>"70.0", "height"=>"1.45"}, "commit"=>"Update Body mass", "id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 172ms (Views: 138.5ms | ActiveRecord: 0.9ms)
+
+
