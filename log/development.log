@@ -5320,4 +5320,3 @@ Processing by BodyMassController#index as HTML
   Rendered body_mass/index.html.erb within layouts/application (244.6ms)
 Completed 200 OK in 1517ms (Views: 1240.9ms | ActiveRecord: 28.9ms)
 
-
