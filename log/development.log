@@ -5707,3 +5707,608 @@ Processing by BodyMassController#index as HTML
 Completed 200 OK in 389ms (Views: 379.8ms | ActiveRecord: 4.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-03-29 15:54:50 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.8ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 478ms (Views: 472.2ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 15:55:02 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j11FGppib8Ebsqef7ZF3RWjBgFsLMHzc0OkGh9ZNwj/YFKkWv0GxM6l0nrTi67kitg4DzaaTeio+Rysd5EE32A==", "body_mass"=>{"mass"=>"10.01", "height"=>"0.0"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (3.7ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (121.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (110.9ms)[0m  [1m[33mUPDATE "body_masses" SET "imc" = $1, "updated_at" = $2 WHERE "body_masses"."id" = $3[0m  [["imc", Infinity], ["updated_at", 2017-03-29 21:55:02 UTC], ["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 1372ms (Views: 152.4ms | ActiveRecord: 237.5ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 15:56:17 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"98/6Ddfv6byb0l+vUvVxN/QP/lyURnBPVMeUu/zqjGWghhYB8sw3TikUZoRdj79QKsB9yjnldrm6abkhzuZ5gg==", "body_mass"=>{"mass"=>"10.01asdas", "height"=>"0.0asdas"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (14.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 389ms (Views: 363.6ms | ActiveRecord: 16.2ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 15:56:39 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sFi7WdzyjzMdyH07VnyTUVlxNKpvoM99iY+oulra3O3nEVdV+dFRwa8ORBBZBl02h763PMIDyYtnIYUgaNYpCg==", "body_mass"=>{"mass"=>"10.01", "height"=>"0.0"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (3.5ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (24.2ms)[0m  [1m[33mUPDATE "body_masses" SET "imc" = $1, "updated_at" = $2 WHERE "body_masses"."id" = $3[0m  [["imc", Infinity], ["updated_at", 2017-03-29 21:56:39 UTC], ["id", 1]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 191ms (Views: 128.6ms | ActiveRecord: 46.2ms)
+
+
+Started GET "/body_mass/1" for 127.0.0.1 at 2017-03-29 16:01:37 -0600
+Processing by BodyMassController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.0ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000index
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/body_mass/1" for 127.0.0.1 at 2017-03-29 16:01:43 -0600
+Processing by BodyMassController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000index
+Completed 302 Found in 11ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/body_mass/1" for 127.0.0.1 at 2017-03-29 16:01:48 -0600
+Processing by BodyMassController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.7ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000index
+Completed 302 Found in 15ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/body_mass/1" for 127.0.0.1 at 2017-03-29 16:02:01 -0600
+Processing by BodyMassController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000index
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:02:09 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (11.5ms)
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:02:10 -0600
+Completed 200 OK in 330ms (Views: 308.0ms | ActiveRecord: 1.8ms)
+
+
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (3.4ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 150ms (Views: 140.5ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:03:28 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 410ms (Views: 401.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:04:37 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 394ms (Views: 382.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:05:40 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (4.7ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 468ms (Views: 458.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:07:44 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 178ms (Views: 167.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:08:25 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 386ms (Views: 380.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:09:10 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.9ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 405ms (Views: 398.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:13:16 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (4.0ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 394ms (Views: 383.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:18:19 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.7ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 207ms (Views: 200.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:18:23 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 245ms (Views: 224.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:20:02 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.4ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 405ms (Views: 394.0ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:20:44 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.8ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 468ms (Views: 459.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:31:36 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 488ms (Views: 469.9ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 16:33:03 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zC0h/v5SWvMdkouQgeoTayC7eKHDkBRhtQHgU9LwCtmbZM3y23GEAa9UsruOkN0M/nT7N24zEpdbr83J4Pz/Pg==", "body_mass"=>{"mass"=>"10.01", "height"=>"0.0"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (3.8ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (4.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "body_masses" SET "imc" = $1, "updated_at" = $2 WHERE "body_masses"."id" = $3[0m  [["imc", Infinity], ["updated_at", 2017-03-29 22:33:03 UTC], ["id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 307ms (Views: 262.5ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/body_mass/1" for 127.0.0.1 at 2017-03-29 16:33:32 -0600
+Processing by BodyMassController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.5ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000index
+Completed 302 Found in 9ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/body_mass/1" for 127.0.0.1 at 2017-03-29 16:33:42 -0600
+Processing by BodyMassController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (6.9ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000index
+Completed 302 Found in 19ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:33:48 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (3.9ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.1ms)
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:33:48 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 714ms (Views: 704.1ms | ActiveRecord: 5.9ms)
+
+
+Completed 200 OK in 661ms (Views: 644.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:39:16 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 426ms (Views: 408.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:40:03 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.9ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 465ms (Views: 458.2ms | ActiveRecord: 4.3ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 16:40:24 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cCz+ZdaRT01/KFCO5Liw7tXbEmZELrrZWG7S8oESfpgnZRJp87KRv83uaaXrwn6JCxSR8OmNvC+2wP9osx6Lfw==", "body_mass"=>{"mass"=>"10.01sadasd", "height"=>"0.0asdasd"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.7ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 160ms (Views: 139.2ms | ActiveRecord: 12.8ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 16:40:40 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TNtKG0uFkM8zDoEScxYUM+Yi7tjO6Gz5WeyS4E7FKHkbkqYXbqZOPYHIuDl8bNpUOO1tTmNLag+3Qr96fMndng==", "body_mass"=>{"mass"=>"10.01", "height"=>"0.0"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (3.5ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (6.1ms)[0m  [1m[33mUPDATE "body_masses" SET "imc" = $1, "updated_at" = $2 WHERE "body_masses"."id" = $3[0m  [["imc", Infinity], ["updated_at", 2017-03-29 22:40:40 UTC], ["id", 1]]
+  [1m[35m (16.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 202ms (Views: 156.9ms | ActiveRecord: 28.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:40:49 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 151ms (Views: 146.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 16:40:49 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.3ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 189ms (Views: 184.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:06:12 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.7ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 500ms (Views: 492.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:08:19 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (3.6ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 416ms (Views: 409.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:08:41 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.8ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 238ms (Views: 232.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:09:28 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (3.8ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 515ms (Views: 495.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:15:34 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (6.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 545ms (Views: 528.5ms | ActiveRecord: 12.1ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 17:15:48 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G4NT2ALMgCviuuYTSL7Hbn6PTG3cPrO4qoZTWORe5LVMyr/UJ+9e2VB83zhHxAkJoEDP+3GdtU5EKH7C1lIRUg==", "body_mass"=>{"mass"=>"kl10.01", "height"=>"0.0lkasjdlkasd"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 163ms (Views: 142.1ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 17:16:02 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PUEqAN7EhZkYuC2O81qy0zzQUTsH991/NBc2TE3AaN5qCMYM++dba6p+FKX8IHy04h/SrapU24nauRvWf8ydOQ==", "body_mass"=>{"mass"=>"10.01", "height"=>"0.0lkasjdlkasd"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (4.5ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 193ms (Views: 165.7ms | ActiveRecord: 16.3ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 17:16:11 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"paUHOpNbkYmU1uoDROCULKcWJAlCK1uqNQgi6w/oV8fy7Os2tnhPeyYQ0yhLmlpLedmnn++IXVzbpg9xPeSiIA==", "body_mass"=>{"mass"=>"10.01", "height"=>"0.0"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (7.2ms)[0m  [1m[33mUPDATE "body_masses" SET "imc" = $1, "updated_at" = $2 WHERE "body_masses"."id" = $3[0m  [["imc", Infinity], ["updated_at", 2017-03-29 23:16:11 UTC], ["id", 1]]
+  [1m[35m (21.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 181ms (Views: 131.9ms | ActiveRecord: 41.6ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 17:16:37 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oZgzusn7m4cc2z9HL+hdVwOKxXUrvev1f6EU8H0fcIL20d+27NhFda4dBmwgkpMw3UVG44Ye7QORDzlqTxOFZQ==", "body_mass"=>{"mass"=>"10.01", "height"=>"0.0"}, "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.3ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.2ms)[0m  [1m[33mUPDATE "body_masses" SET "imc" = $1, "updated_at" = $2 WHERE "body_masses"."id" = $3[0m  [["imc", Infinity], ["updated_at", 2017-03-29 23:16:37 UTC], ["id", 1]]
+  [1m[35m (35.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 234ms (Views: 172.9ms | ActiveRecord: 46.7ms)
+
+
+Started GET "/body_mass/1" for 127.0.0.1 at 2017-03-29 17:16:47 -0600
+Processing by BodyMassController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (3.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000index
+Completed 302 Found in 10ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:16:55 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 134ms (Views: 125.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:21:04 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.6ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 197ms (Views: 190.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:21:38 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 172ms (Views: 163.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:22:09 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (6.3ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 230ms (Views: 214.6ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:23:12 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.9ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 162ms (Views: 150.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:25:21 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (7.4ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 432ms (Views: 417.3ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:30:01 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.8ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 388ms (Views: 375.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:30:32 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 164ms (Views: 159.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:33:07 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (4.4ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 173ms (Views: 161.9ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:36:18 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (1.3ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 373ms (Views: 361.3ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 17:37:10 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c21meZ/m5zwb2hdfjYpJXn6h+Fi12I4K8qF2l93CtdskJIp1usU5zqkcLnSC8Ic5oG57zhh7iPwcD1sN785APA==", "body_mass"=>{"mass"=>"10", "height"=>"0"}, "vehicl"=>"Car", "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "body_masses" SET "mass" = $1, "imc" = $2, "updated_at" = $3 WHERE "body_masses"."id" = $4[0m  [["mass", 10.0], ["imc", Infinity], ["updated_at", 2017-03-29 23:37:10 UTC], ["id", 1]]
+  [1m[35m (11.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 335ms (Views: 290.9ms | ActiveRecord: 23.7ms)
+
+
+Started PATCH "/body_mass/1" for 127.0.0.1 at 2017-03-29 17:37:23 -0600
+Processing by BodyMassController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tWJ53O7Vscifw8EFAEEZqFCcrlxiY0B6X/gn2xAgNnniK5XQy/ZvOi0F+C4PO9fPjlMtys/ARoyxVgpBIizDng==", "body_mass"=>{"mass"=>"10.0", "height"=>"0.0"}, "vehicl"=>"Car", "gender"=>"female", "commit"=>"Update Body mass", "id"=>"1"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (2.8ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[33mUPDATE "body_masses" SET "imc" = $1, "updated_at" = $2 WHERE "body_masses"."id" = $3[0m  [["imc", Infinity], ["updated_at", 2017-03-29 23:37:23 UTC], ["id", 1]]
+  [1m[35m (46.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 226ms (Views: 149.8ms | ActiveRecord: 68.5ms)
+
+
+Started GET "/body_mass/1" for 127.0.0.1 at 2017-03-29 17:37:33 -0600
+Processing by BodyMassController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (10.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000index
+Completed 302 Found in 17ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:37:41 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (4.8ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (11.0ms)
+Started GET "/" for 127.0.0.1 at 2017-03-29 17:37:41 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (13.1ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 289ms (Views: 279.0ms | ActiveRecord: 5.3ms)
+
+
+Completed 200 OK in 243ms (Views: 214.3ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 18:17:39 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.2ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 441ms (Views: 434.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 18:20:04 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.9ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 442ms (Views: 433.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 18:20:17 -0600
+Processing by BodyMassController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBodyMass Load (0.3ms)[0m  [1m[34mSELECT  "body_masses".* FROM "body_masses" WHERE "body_masses"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering body_mass/index.html.erb within layouts/application
+  Rendered body_mass/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 163ms (Views: 157.1ms | ActiveRecord: 2.3ms)
+
+
