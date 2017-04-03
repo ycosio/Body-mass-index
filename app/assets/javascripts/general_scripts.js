@@ -1,19 +1,38 @@
-document.addEventListener('DOMContentLoaded', function(){
-  document.getElementsByName('commit')[0].addEventListener('click', function(event){
-    localStorage.clear();
-  });
-}, false);
+var MyApp = {
+  Elements   : {},
+  Actions    : {},
+  Initialize : function(){
+    MyApp.wrapElements();
+    MyApp.bindEvents();
+  }
+};
 
-(function(forms){
-  forms.forEach(function(form){
-    Array.from(form.elements).forEach(function(element, index){
-      addMultipleEventListener(element,['keyup','change']);
-      restoreStorage(element);
+/*List of DOM Elements*/
+MyApp.wrapElements = function(){
+    MyApp.Elements.commit = document.querySelector('[name="commit"]');
+    MyApp.Elements.inputs = Array.from(document.forms).map(function(form){
+      return Array.from(form.elements)
+    });
+};
+
+/* Wire DOM Elements with myApp Actions*/
+MyApp.bindEvents = function(){
+  MyApp.Elements.commit.addEventListener('click', MyApp.Actions.clearLocalStorage);
+  MyApp.Elements.inputs.forEach(function(form){
+    form.forEach(function(element){
+      MyApp.Actions.addMultipleEventListener(element,['keyup','change']);
+      MyApp.Actions.restoreStorage(element);
     });
   });
-})(Array.from(document.forms));
+};
 
-function addMultipleEventListener(element,events){
+//Clear Local Storage
+MyApp.Actions.clearLocalStorage = function(){
+  localStorage.clear();
+};
+
+// Multiple Event Listener
+MyApp.Actions.addMultipleEventListener = function(element,events){
   events.forEach(function(events){
     element.addEventListener(events, function(event){
       let value = element.type == 'checkbox' ? element.checked : element.value
@@ -22,21 +41,24 @@ function addMultipleEventListener(element,events){
   });
 }
 
-function restoreStorage(element){
+// Restore Storage
+MyApp.Actions.restoreStorage = function(element){
   let value = localStorage[element.name]
   if(value){
     switch(element.type){
       case 'text':
         element.value = value
-        break;
+      break;
       case 'checkbox':
         element.checked = value == "true"
-        break;
+      break;
       case 'radio':
         element.checked = value == element.value
-        break;
+      break;
       default:
         element.innerHTML = value
     }
   }
 }
+
+window.addEventListener('load',  MyApp.Initialize, false);
