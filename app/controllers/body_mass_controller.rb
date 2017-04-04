@@ -4,9 +4,11 @@ before_action :authenticate_user!
 before_action :get_body_mass
 
   def index
+    @js = 'index'
   end
 
   def show
+    @js = 'index'
     redirect_to 'index'
   end
 

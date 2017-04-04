@@ -2,7 +2,11 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-Rails.application.config.assets.precompile += %w( general_scripts.js  )
+Rails.application.config.assets.precompile += %w( hola.js  )
+Rails.application.config.assets.precompile += %w( bodyMass/bm.js  )
+Rails.application.config.assets.precompile += %w( bodyMass/initializers/index.js  )
+Rails.application.config.assets.precompile += %w( bodyMass/elements/index.js  )
+Rails.application.config.assets.precompile += %w( bodyMass/actions/index.js  )
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
